@@ -1,4 +1,4 @@
-# SQL libray management
+# SQL library management
 * This applicatin does all CRUD operation
 * you can create, read, update or delete a book from the library database
 * Provide pagination base on the total number of books
