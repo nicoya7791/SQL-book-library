@@ -1,0 +1,32 @@
+extends ../layout 
+
+block content 
+    h1 Books
+    p
+        a(class="button" href="/books/new") Create New Book 
+    form(action='/books/search', method='get')
+        input(type='search' placeholder='Search Term' name='search' class='search' )
+        input(type='submit' value='Search')
+
+    table
+        thead 
+            th Title
+            th Author 
+            th Genre 
+            th Year
+        tbody
+            each book in books
+                tr 
+                    td
+                        a(href=`/books/${book.id}`) #{book.title}
+                    td #{book.author}
+                    td #{book.genre}
+                    td #{book.year}
+    //- create pagination base on number of books
+    -var pageNumber = 1;
+        div(class='pagination')
+            while pageNumber <= totalPages
+                if (page == pageNumber)
+                    a(href=`/books/page/${pageNumber}` class='button' class='active' class='pagination') #{pageNumber++}
+                else
+                    a(href=`/books/page/${pageNumber}` class='button' class='pagination') #{pageNumber++}

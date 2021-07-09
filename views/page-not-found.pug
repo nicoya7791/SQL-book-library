@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= error.message
+  p Sorry!, we could not get the page your were lookin for.
+  h2= 'Error: ' + error.status
+  p 
+    a(href='/books') Home
+  //- pre #{error.stack}

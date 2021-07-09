@@ -1,0 +1,14 @@
+extends ../layout
+
+block content 
+    h1 Update Book 
+    include errors
+    form(action='/books/'+ book.id method='post' onsubmit="confirm('book Updated')") 
+        include form
+        p 
+            input(type="submit" value="Update Book")
+        p  
+            a(class="button" href='/books') Cancel 
+    form(action=`/books/${book.id}/delete` onsubmit="confirm('Delete Book?');" method="POST")
+        p 
+            input(type="submit" value="Delete Book")
