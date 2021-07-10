@@ -39,7 +39,7 @@ app.use(function (error, req, res, next) {
   } else {
     error.message = 'Something went really wrong';
     res.status(error.status || 5000);
-    res.render('errors', { error });
+    res.render('error', { error });
   }
 });
 
